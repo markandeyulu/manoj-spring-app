@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.amazon</groupId>
-  <artifactId>EcommerceApp</artifactId>
+  <artifactId>app</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>EcommerceApp</name>
+  <name>test</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 

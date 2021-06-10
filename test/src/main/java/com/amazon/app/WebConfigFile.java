@@ -1,11 +1,16 @@
 package com.amazon.app;
 
+import java.util.Properties;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping;
+import org.springframework.web.servlet.handler.SimpleUrlHandlerMapping;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import com.amazon.app.controller.ProductController2;
 import com.amazon.app.dao.ProductDAO;
 
 @Configuration
@@ -25,5 +30,27 @@ public class WebConfigFile {
 		irvr.setPrefix("/WEB-INF/views/");
 		irvr.setSuffix(".jsp");
 		return irvr;
+	}
+	
+	
+	
+	//@Bean("/testbeannamemapping*")
+	@Bean
+	public ProductController2 ProductController2() {
+		return new ProductController2();
+	}
+	
+/*	@Bean
+	public BeanNameUrlHandlerMapping getBeanNameUrlHandlerMapping() {
+		return new BeanNameUrlHandlerMapping();
+	}*/
+	
+	@Bean
+	public SimpleUrlHandlerMapping getSimpleUrlHandlerMapping() {
+		SimpleUrlHandlerMapping shm = new SimpleUrlHandlerMapping();
+		Properties mappings = new Properties();
+		mappings.setProperty("/marktestsimpleURL", "productController2");
+		shm.setMappings(mappings);
+		return shm;
 	}
 }

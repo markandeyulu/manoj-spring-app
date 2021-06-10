@@ -1,4 +1,5 @@
 com\amazon\app\DispatcherServletInitializer.class
+com\amazon\app\controller\ProductController2.class
 com\amazon\app\beans\Product.class
 com\amazon\app\controller\ProductController.class
 com\amazon\app\dao\ProductDAO.class
